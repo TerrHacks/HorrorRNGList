@@ -1,4 +1,4 @@
-[
+local itemsToDestroy = {
     "Hopeful",
     "Dark Ripple",
     "Graveyard Mist",
@@ -9,4 +9,15 @@
     "Hacker",
     "Mistwalker",
     "Wisp",
-]
+}
+
+for _, itemName in ipairs(itemsToDestroy) do
+    local args = {
+        "Destroy",
+        itemName
+    }
+
+    local replicatedStorage = game:GetService("ReplicatedStorage")
+    local inventoryEvent = replicatedStorage:WaitForChild("Events"):WaitForChild("InventoryEvent")
+    inventoryEvent:FireServer(unpack(args))
+end
