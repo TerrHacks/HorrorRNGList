@@ -21,15 +21,3 @@ for _, itemName in ipairs(itemsToDestroy) do
     local inventoryEvent = replicatedStorage:WaitForChild("Events"):WaitForChild("InventoryEvent")
     inventoryEvent:FireServer(unpack(args))
 end
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("StartRoll"):FireServer()
-wait(0.1)
-local args = {
-    [1] = "Equip"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RolledFromClient"):FireServer(unpack(args))
-
-   end
-end
-
